@@ -1,4 +1,6 @@
-﻿namespace MonkeyFinder.ViewModel;
+﻿using MonkeyFinder.Services;
+
+namespace MonkeyFinder.ViewModel;
 
 public partial class MonkeysViewModel : BaseViewModel
 {

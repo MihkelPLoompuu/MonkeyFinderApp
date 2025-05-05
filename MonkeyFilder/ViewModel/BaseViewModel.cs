@@ -1,6 +1,5 @@
 ﻿namespace MonkeyFinder.ViewModel;
 
-[INotifyPropertyChanged]
 public partial class BaseViewModel : ObservableObject
 {
     public BaseViewModel() 
