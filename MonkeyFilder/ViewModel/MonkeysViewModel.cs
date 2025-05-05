@@ -7,20 +7,17 @@ public partial class MonkeysViewModel : BaseViewModel
     MonkeyService monkeyService;
     public ObservableCollection<Monkey> Monkeys { get; } = new();
 
-
     public MonkeysViewModel(MonkeyService monkeyService)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
-
     }
 
     [RelayCommand]
-    async Task GetMonkeyAsync()
+    async Task GetMonkeysAsync()
     {
         if (IsBusy)
             return;
-
         try
         {
             IsBusy = true;
@@ -36,7 +33,7 @@ public partial class MonkeysViewModel : BaseViewModel
         {
             Debug.WriteLine(ex);
             await Shell.Current.DisplayAlert("Error!",
-                $"Unable to get monkey: {ex.Message}", "OK");
+                $"Unable to get monkeys: {ex.Message}", "OK");
         }
         finally
         {
